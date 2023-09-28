@@ -1,5 +1,5 @@
 body {
-    background:rgb(219, 102, 96);
+    background:rgb(53, 27, 169);
 }
 #grid {
     display: flex;
@@ -7,7 +7,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
-    width: 640px;
+    width: 576px;
     height: auto;
     margin: 86px;
 }
@@ -16,12 +16,10 @@ body {
     height: 36px;
     width: 36px;
     background: rgb(203, 193, 182);
-    margin: 2px;
 }
 
 .hover {
     height: 36px;
     width: 36px;
     background: rgb(197, 156, 112);
-    margin: 2px;
 }
