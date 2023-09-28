@@ -1,0 +1,27 @@
+body {
+    background:rgb(219, 102, 96);
+}
+#grid {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: 640px;
+    height: auto;
+    margin: 86px;
+}
+
+.block {
+    height: 36px;
+    width: 36px;
+    background: rgb(203, 193, 182);
+    margin: 2px;
+}
+
+.hover {
+    height: 36px;
+    width: 36px;
+    background: rgb(197, 156, 112);
+    margin: 2px;
+}
