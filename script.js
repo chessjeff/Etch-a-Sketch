@@ -1,11 +1,17 @@
 const grid = document.querySelector('#grid');
 
-const userInput = 256; //temporary
+const userInput = 110 //temporary
 
-for (i = 0; i < userInput; i++) {
-    const block = document.createElement('div');
-    block.className = 'block';
-    grid.appendChild(block);   
+for (i = 0; i<userInput; i++) {
+    const row = document.createElement('div');
+    row.className='row';
+    
+    for (j = 0; j < userInput; j++) {
+        const block = document.createElement('div');
+        block.className = 'block';
+        row.appendChild(block);   
+    }
+    grid.appendChild(row);
 }
 
 const blocks = document.getElementsByClassName('block');
