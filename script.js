@@ -6,14 +6,18 @@ const sizeButton = document.querySelector('#prompt');
 const rows = document.getElementsByClassName('row');
 const rowsArray = Array.from(rows);
 
-
-
-
-
+createGrid(16); //create grid on page load
 
 sizeButton.addEventListener('click', () => {
     return createGrid(changeSize());
 })
+
+resetButton.addEventListener('click', () => {
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+    createGrid(16);
+});
 
 function createGrid(userInput) {
     reset();
@@ -21,7 +25,6 @@ function createGrid(userInput) {
     for (i = 0; i < userInput; i++) {
         const row = document.createElement('div');
         row.className='row';
-        
         for (j = 0; j < userInput; j++) {
             const block = document.createElement('div');
             block.className = 'block';
@@ -35,9 +38,6 @@ function createGrid(userInput) {
         grid.appendChild(row);   
     }
 }
-
-    // delegate event listener to #grid
-    // stuck!!!
 
 function changeSize() {
     const userInput = parseInt(prompt("Change grid size", "Example: 16"));
@@ -53,5 +53,3 @@ function reset() {
         grid.removeChild(grid.firstChild);
     }
 }
-
-resetButton.addEventListener('click', () => reset());
