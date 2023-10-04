@@ -6,6 +6,9 @@ const sizeButton = document.querySelector('#prompt');
 const rows = document.getElementsByClassName('row');
 const rowsArray = Array.from(rows);
 
+const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+document.body.style.backgroundColor = '#' + randomColor;
+
 createGrid(16); //create grid on page load
 
 sizeButton.addEventListener('click', () => {
@@ -29,10 +32,10 @@ function createGrid(userInput) {
             const block = document.createElement('div');
             block.className = 'block';
             row.appendChild(block);   
+            // assign random color on mouseover
             block.addEventListener('mouseover', () => {
-                if (!block.classList.contains('hover')) {
-                    block.classList.toggle('hover');
-                }
+                const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+                block.style.backgroundColor = '#' + randomColor;
             });
         }
         grid.appendChild(row);   
@@ -40,8 +43,9 @@ function createGrid(userInput) {
 }
 
 function changeSize() {
-    const userInput = parseInt(prompt("Change grid size", "Example: 16"));
-    if (Number.isNaN(userInput)) {
+    const userInput = parseInt(
+        prompt("Change grid size", "Enter a number less than 100"));
+    if (Number.isNaN(userInput) || userInput > 100) {
         return changeSize();
     } else {
         return userInput;

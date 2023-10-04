@@ -1,5 +1,4 @@
 body {
-    background:rgb(53, 27, 169);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,8 +30,4 @@ body {
 .block {
     flex: 1;
     background: white;
-}
-
-.hover {
-    background: black;
 }
