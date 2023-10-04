@@ -45,7 +45,7 @@ function createGrid(userInput) {
 function changeSize() {
     const userInput = parseInt(
         prompt("Change grid size", "Enter a number less than 100"));
-    if (Number.isNaN(userInput) || userInput > 100) {
+    if (Number.isNaN(userInput) || userInput > 100 || userInput < 1) {
         return changeSize();
     } else {
         return userInput;
